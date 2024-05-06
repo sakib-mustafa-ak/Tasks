@@ -1,53 +1,33 @@
-#include <iostream>
-#include <cstdio>
-#include <algorithm>
-#include <cstdio>
-#include <cstring>
-#include <cmath>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
-const int N = 100100, inf = 1000000;
-int a[N];
-int size[N / 2];
 int main()
 {
-
-    int T, n, q, under1, under2, m, uu1, uu2, minn;
-    scanf("%d", &T);
-    for (int t = 1; t <= T; t++)
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin >> t;
+    for (int i = 1; i <= t; i++)
     {
-        memset(size, 10, sizeof(size));
-        scanf("%d%d", &n, &q);
-        m = sqrt(n);
-        for (int i = 1; i <= n; i++)
-        {
-            scanf("%d", &a[i]);
-            size[(int)i / m] = min(size[(int)i / m], a[i]);
-        }
+        int n, q;
+        cin >> n >> q;
+        vector<int> a(n), ans(q);
+        for (int j = 0; j < n; j++)
+            cin >> a[j];
 
-        printf("Case %d:\n", t);
-        for (int i = 0; i < q; i++)
+        for (int j = 0; j < q; j++)
         {
-            scanf("%d%d", &under1, &under2);
-            uu1 = (int)under1 / m;
-            uu2 = (int)under2 / m;
-            minn = inf;
-            for (int j = under1; j <= min((uu1 + 1) * m - 1, under2); j++)
-            {
-                minn = min(minn, a[j]);
-            }
-            for (int j = uu1 + 1; j < uu2; j++)
-            {
-                minn = min(minn, size[j]);
-            }
-            if (uu1 != uu2)
-            {
-                for (int j = uu2 * m; j <= under2; j++)
-                    minn = min(minn, a[j]);
-            }
-            printf("%d\n", minn);
+            int ii, jj;
+            cin >> ii >> jj;
+            int mn = a[ii - 1];
+            for (int k = ii; k < jj; k++)
+                mn = min(mn, a[k]);
+            ans[j] = mn;
+        }
+        printf("Case %d:\n", i);
+        for (int j = 0; j < q; j++)
+        {
+            cout << ans[j] << endl;
         }
     }
-    return 0;
 }
