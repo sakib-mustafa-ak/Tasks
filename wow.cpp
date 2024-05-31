@@ -1,40 +1,20 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
+using namespace std;
 
-int a[1005], n, flip;
-void InsertionSort();
 int main()
 {
-    int i, j;
-    while (scanf("%d", &n) == 1)
+    int sum = 0;
+    string s;
+    cin >> s;
+    for (int i = 0; i < s.size(); i++)
     {
-        for (i = 1; i <= n; i++)
-            scanf("%d", &a[i]);
-        InsertionSort();
-        printf("Minimum exchange operations : %d\n", flip);
-    }
-
-    return 0;
-}
-void InsertionSort()
-{
-    int k, ptr, temp, set;
-    flip = 0;
-    for (k = 2; k <= n; k++)
-    {
-        temp = a[k];
-        ptr = k - 1;
-        while (temp < a[ptr])
+        if (s[i] >= 48 && s[i] <= 57)
         {
-            a[ptr + 1] = a[ptr];
-            ptr = ptr - 1;
-            set = 1;
-            flip += 1;
-            // for (int x = 0; x < n; x++)
-            // {
-            //     printf("%d ", a[x]);
-            // }
-            // printf("\n");
+            sum += (s[i] - 48);
+            cout << sum << endl;
         }
-        a[ptr + 1] = temp;
+        else
+            cout << 0 << endl;
     }
+    // cout << sum << endl;
 }
