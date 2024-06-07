@@ -17,7 +17,7 @@ int dqueue[11], front = -1, rear = -1;
 // }
 void push_Left(int n, int x)
 {
-    if (rear == n - 1)
+    if ((rear + 1) % n == front)
         cout << "The queue is full\n";
     else
     {
@@ -34,7 +34,7 @@ void push_Left(int n, int x)
 
 void push_Right(int n, int x)
 {
-    if (rear == n - 1)
+    if ((rear + 1) % n == front)
         cout << "The queue is full\n";
     else
     {
@@ -83,6 +83,7 @@ int main()
     cin >> t;
     for (int tc = 1; tc <= t; tc++)
     {
+        front = -1, rear = -1;
         printf("Case %d:\n", tc);
         int n, m;
         cin >> n >> m;
