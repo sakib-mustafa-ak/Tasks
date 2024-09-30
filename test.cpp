@@ -1,142 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-// Define the Node struct
-struct Node
+/*void insertionSort(int arr[], int size)
 {
-    int data;
-    Node *next;
-};
-Node *root = nullptr;
-
-void add_node(int data)
-{
-    Node *new_node = new Node();
-    new_node->data = data;
-    new_node->next = nullptr;
-
-    if (root == nullptr)
+    // Outer loop for key
+    for (int i = 1; i < size; i++)
     {
-        root = new_node;
-    }
-    else
-    {
-        Node *current_node = root;
-        while (current_node->next != nullptr)
+        int key = arr[i];
+        int index = i - 1;
+        // inner loop for checking all the element in left partition
+        // Compare key with each element in left portion until get smaller element
+        while (key < arr[index] && index >= 0)
         {
-            current_node = current_node->next;
+            arr[index + 1] = arr[index];
+            index -= 1;
         }
-        current_node->next = new_node;
-    }
-}
-
-void delete_node(int data)
-{
-    Node *current_node = root;
-    Node *previous_node = nullptr;
-    while (current_node->data != data)
-    {
-        previous_node = current_node;
-        current_node = current_node->next;
-    }
-    if (current_node == root) // to delete the node
-    {
-        Node *temp = root; // keep root in a temp node
-        root = root->next;
-        delete (temp); // free memory
-    }
-    else // to delete the non-root node/others node
-    {
-        previous_node->next = current_node->next;
-        delete (current_node);
-    }
-}
-
-// function to insert a node at a specific position
-void insert_node(int index, int data)
-{
-    Node *new_node = new Node();
-    new_node->data = data;
-    new_node->next = nullptr;
-
-    if (index == 0)
-    {
-        new_node->next = root;
-        root = new_node;
-    }
-    else
-    {
-        Node *current = root;
-        for (int i = 0; i < index - 1 && current != nullptr; ++i)
-        {
-            current = current->next;
-        }
-        if (current != nullptr)
-        {
-            new_node->next = current->next;
-            current->next = new_node;
-        }
-        else
-        {
-            cout << "Index is out of bounds" << endl;
-            delete new_node; // Clean up the allocated node
-        }
-    }
-}
-
-int list_length()
-{
-    Node *current = root;
-    int count = 0;
-    while (current != nullptr)
-    {
-        count++;
-        current = current->next;
-    }
-    return count;
-}
-
-void print_forward()
-{
-    Node *current = root;
-    while (current != nullptr)
-    {
-        cout << current->data << " ";
-        current = current->next;
-    }
-    cout << endl;
-}
-
-void print_backward(Node *node)
-{
-    if (node != nullptr)
-    {
-        print_backward(node->next);
-        cout << node->data << " ";
+        arr[index + 1] = key;
     }
 }
 
 int main()
 {
-    int node_data[5] = {1, 2, 4, 6, 8};
-    for (int i : node_data)
-    {
-        add_node(i);
-    }
-
-    cout << "Forward Traversal: ";
-    print_forward();
-
-    cout << "Backward Traversal: ";
-    print_backward(root);
-    cout << endl;
-
-    cout << "Current length of list: " << list_length() << endl;
-
-    // Insert a node at position 2 with data 5
-    insert_node(2, 5);
-    cout << "After insertion: ";
-    print_forward();
+    int arr[] = {4, 3, 2, 10, 12, 1, 5, 6};
+    int sz = sizeof(arr) / sizeof(arr[0]); // total size / size of an element
+    insertionSort(arr, sz);
+    // Print array after sorting
+    for (int i = 0; i < sz; i++)
+        cout << arr[i] << " ";
 
     return 0;
+}*/
+int main()
+{
+    int x = 7 | 10;
+    cout << x << endl;
 }

@@ -1,11 +1,20 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define int long long 
+#define int long long
 
 signed main()
 {
-	char a;
-	cin>>a;
+    char a;
+    cin >> a;
 
-	printf("# # # # # # # # # # #         # # # # # # # # # # #\n")
+    printf("%c %c %c %c %c %c %c %c %c %c %c         %c %c %c %c %c %c %c %c %c %c %c\n", a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a);
+    printf("            %c    %c     %c%c                    %c    %c\n", a, a, a, a, a, a);
+    printf("          %c %c %c  %c   %c    %c                  %c %c  %c\n", a, a, a, a, a, a, a, a, a);
+    printf("        %c   %c  %c %c  %c      %c                 %c  %c %c\n", a, a, a, a, a, a, a, a, a);
+    printf("      %c     %c    %c   %c%c%c%c%c%c                  %c    %c\n", a, a, a, a, a, a, a, a, a, a, a);
+    printf("    %c       %c    %c  %c                        %c    %c\n", a, a, a, a, a, a);
+    printf("      %c     %c    %c    %c            %c     %c   %c    %c\n", a, a, a, a, a, a, a, a);
+    printf("        %c   %c    %c      %c        %c  %c  %c  %c  %c    %c\n", a, a, a, a, a, a, a, a, a, a);
+    printf("          %c %c    %c        %c     %c     %c    %c %c    %c\n", a, a, a, a, a, a, a, a, a);
+    printf("            %c    %c          %c  %c             %c    %c\n", a, a, a, a, a, a);
 }
