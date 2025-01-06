@@ -1,0 +1,1 @@
+print("your Name has "+ str(len(input("What is your Name?\n"))) + " Characters.")
