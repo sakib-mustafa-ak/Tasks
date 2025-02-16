@@ -15,18 +15,18 @@ signed main(){
     vector<pair<int,int>> a(n);
     for (int i = 0; i < n; ++i)
     {
-    	int x,y;
-    	cin>>x>>y;
-    	a[i]={x,y};
+        int x,y;
+        cin>>x>>y;
+        a[i]={y,x};
     }
     sort(all(a));
     //cout<<a[0].ff<<" "<<a[0].ss<<endl;
-    for(int i = 0,j = 1 ; j < n; j++){   	
-    	if(a[j].ff>a[i].ss){   		
-    		count++;
-    		i=j;
-    		//cout<<a[i].ff<<" "<<a[i].ss<<endl;
-    	}
+    for(int i = 0,j = 1 ; j < n; j++){      
+        if(a[j].ss>a[i].ff){        
+            count++;
+            i=j;
+            //cout<<a[i].ff<<" "<<a[i].ss<<endl;
+        }
     }
     cout<<count<<endl;
 }

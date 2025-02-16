@@ -1,0 +1,1 @@
+print("Your BMI is " + str(round(float(input("Enter your weight in kg: "))/(float(input("Enter your height in m: "))**2),3)))
